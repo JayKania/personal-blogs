@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Category from "./Category"
 
 interface CategoriesProps {
 
@@ -14,6 +15,10 @@ const Categories = (props: CategoriesProps) => {
                 <div className="category">Typescript</div>
                 <div className="category">React JS</div>
             </div>
+            <Category />
+            <Category />
+            <Category />
+            <Category />
         </StyledCategories>
     )
 }
@@ -29,7 +34,7 @@ const StyledCategories = styled.div`
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        margin-top: 2rem;
+        margin: 2rem 0;
         width: 100%;
         justify-content: center;
         .category {
@@ -37,7 +42,7 @@ const StyledCategories = styled.div`
             height: 200px;
             display: flex;
             align-items: center;
-            background-color: white;
+            background-color: var(--primary-color);
             justify-content: center;
             border-radius: 5px;
             box-shadow: 0px 0px 10px 2px #dfdfdf;
@@ -60,6 +65,11 @@ const StyledCategories = styled.div`
                 white-space: nowrap;
                 font-size: 1rem;
             }
+        }
+    }
+    @media only screen and (min-width: 542px) and (max-width: 1114px) {
+        .categories {
+            flex-wrap: nowrap;
         }
     }
 `

@@ -55,7 +55,7 @@ const StyledHome = styled.div`
                 border: 1px solid rgb(204, 204, 204, 0.5);
                 padding: 1rem 2rem;
                 font-size: 1rem;
-                background-color: white;
+                background-color: var(--primary-color);
                 border-radius: 5px;
                 width: 80%;
                 ::placeholder {
