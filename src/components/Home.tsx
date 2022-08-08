@@ -6,29 +6,29 @@ interface HomeProps {
 
 const Home = (props: HomeProps) => {
     return (
-        <StyledHome>
+        <StyledHome id="home">
             <div className="title-container">
                 <h2>Hi, I'm Jay Kania</h2>
                 <h2>Front End Dev</h2>
                 <p>On this blog I share tips and tricks, frameworks, projects, tutorials, etc <br /> Make sure you subscribe to get the latest details.</p>
-                <div className="input-container">
+                <form className="subscription-from" onSubmit={(event: any) => { event.preventDefault() }}>
                     <input type="email" placeholder='Enter your email here ...' />
                     <button>Subscribe</button>
-                </div>
+                </form>
             </div>
-            <div className="image-container">
+            {window.innerWidth >= 1000 ? <div className="image-container">
                 <img src={coding_img} alt="" />
-            </div>
+            </div> : null}
         </StyledHome>
     )
 }
 
 const StyledHome = styled.div`
     display: flex;
-    background-color: rgb(250, 251, 253);
+    background-color: var(--background-color);
     .title-container {
         flex-basis: 50%;
-        padding: 0rem 3rem;
+        padding: 2rem 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,7 +45,7 @@ const StyledHome = styled.div`
             color: rgb(0,0,0,0.5)
         }
 
-        .input-container {
+        form {
             margin-top: 2rem;
             display: flex;
             width: 100%;
@@ -71,6 +71,9 @@ const StyledHome = styled.div`
                 color: white;
                 font-weight: 300;
                 font-size: 1.2rem;
+                :hover {
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -81,6 +84,30 @@ const StyledHome = styled.div`
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+    @media only screen and (max-width: 540px) {
+        .title-container {
+            padding: 1rem 0rem 1rem 1rem;
+            h2 {
+                font-size: 2rem;
+                width: fit-content
+            }
+            p {
+                font-size: 0.6rem;
+                padding: 0.5rem;
+            }
+            form {
+                input {
+                    padding: 0.5rem 1rem;
+                    font-size: 0.7rem;
+                    width: 50%;
+                }
+                button {
+                    padding: 0.5rem 1rem;
+                    font-size: 0.7rem;
+                }
+            }
         }
     }
 `

@@ -10,7 +10,7 @@ const Navbar = (props: NavProps) => {
             <StyledNavTitle className="nav-title">Jay<span>.Blog</span></StyledNavTitle>
             <StyledNavLinks className="nav-links">
                 <a href="#home" className="home">Home</a>
-                <a href="#category" className="Category">Category</a>
+                <a href="#categories" className="categories">Catogories</a>
                 <a href="#about" className="about">About Me</a>
             </StyledNavLinks>
         </StyledNavbar>
@@ -21,9 +21,13 @@ const StyledNavbar = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: 1rem 3rem;
-    box-shadow: 1px 1px 10px 2px rgb(204, 204, 204, 0.4);
     font-weight: 500;
     align-items: center;
+
+    @media only screen and (max-width: 540px) {
+        padding: 1rem;
+        width: 100%;
+    }
 `
 
 const StyledNavTitle = styled.div`
@@ -31,6 +35,12 @@ const StyledNavTitle = styled.div`
     span {
         font-size: 1.3rem;
         color: var(--accent-color)
+    }
+    @media only screen and (max-width: 540px) {
+        font-size: 1rem;
+        span {
+            font-size: 0.7rem;
+        }
     }
 `;
 
@@ -42,6 +52,10 @@ const StyledNavLinks = styled.div`
         text-decoration: none;
         color: black;
     }
+    @media only screen and (max-width: 540px) {
+        font-size: 0.7rem;
+    }
 `
+
 
 export default Navbar
