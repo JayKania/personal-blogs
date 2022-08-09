@@ -10,10 +10,10 @@ const Categories = (props: CategoriesProps) => {
         <StyledCategories id="categories">
             <h2>Browse Categories</h2>
             <div className="categories">
-                <div className="category">CSS</div>
-                <div className="category">Javascript</div>
-                <div className="category">Typescript</div>
-                <div className="category">React JS</div>
+                <div className="category"><a href="#">React JS</a></div>
+                <div className="category"><a href="#">Javascript</a></div>
+                <div className="category"><a href="#">Typescript</a></div>
+                <div className="category"><a href="#">CSS</a></div>
             </div>
             <Category />
             <Category />
@@ -25,7 +25,8 @@ const Categories = (props: CategoriesProps) => {
 
 const StyledCategories = styled.div`
     background-color: var(--background-color);
-    padding: 3rem 3rem;
+    padding: 3rem;
+    padding-bottom: 0;
     h2 {
         font-weight: 500;
         text-align: center;
@@ -48,15 +49,22 @@ const StyledCategories = styled.div`
             box-shadow: 0px 0px 10px 2px #dfdfdf;
             font-size: 1.2rem;
             transition: background-color 300ms ease;
+            a {
+                text-decoration: none;
+                color: black;
+            }
             :hover {
                 background-color: var(--accent-color);
-                color: white;
+                a {
+                    color: white;
+                }
                 cursor: pointer;
             }
         }
     }
     @media only screen and (max-width: 540px) {
         padding: 3rem 1rem;
+        padding-bottom: 0;
         .categories {
             gap: 1rem;
             .category {

@@ -11,7 +11,6 @@ const Navbar = (props: NavProps) => {
             <StyledNavLinks className="nav-links">
                 <a href="#home" className="home">Home</a>
                 <a href="#categories" className="categories">Catogories</a>
-                <a href="#about" className="about">About Me</a>
             </StyledNavLinks>
         </StyledNavbar>
     )

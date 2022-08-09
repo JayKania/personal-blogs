@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import coding_img from "../assets/illustration.jpg"
+import coding_img from "../assets/Illustration_1.png"
 interface HomeProps {
 
 }
@@ -52,7 +52,7 @@ const StyledHome = styled.div`
             gap: 1rem;
             input {
                 outline: none;
-                border: 1px solid rgb(204, 204, 204, 0.5);
+                border: none;
                 padding: 1rem 2rem;
                 font-size: 1rem;
                 background-color: var(--primary-color);
